@@ -15,4 +15,9 @@ class SoftPayUrl {
 
   static const freeMoneySenegalUrl =
       'https://app.paydunya.com/api/v1/softpay/free-money-senegal';
+
+      // added url for Orange Money Mali && Moov Money Mali
+
+  static const orangeMoneyMaliUrl = 'https://app.paydunya.com/api/v1/softpay/orange-money-mali';
+  static const moovMoneyMaliUrl = 'https://app.paydunya.com/api/v1/softpay/moov-mali';
 }

@@ -101,6 +101,12 @@ class Paydunya {
     if (PaymentMethod.freeMoneySenegal == paymentMethod) {
       return _payment.freeMoneySenegal(requestPayment: payerInfo);
     }
+    if (PaymentMethod.orangeMoneyMali == paymentMethod) {
+      return _payment.orangeMoneyMali(requestPayment: payerInfo);
+    }
+    if (PaymentMethod.moovMoneyMali == paymentMethod) {
+      return _payment.moovMoneyMali(requestPayment: payerInfo);
+    }
     throw 'Methode de paiement introuvable';
   }
 }

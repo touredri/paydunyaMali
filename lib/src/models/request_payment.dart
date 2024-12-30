@@ -8,6 +8,7 @@ class PayerInfo extends Equatable {
   final int? otp;
   final String phone;
   final String paymentToken;
+  final String? customerAddress;
 
   const PayerInfo({
     this.email,
@@ -15,6 +16,7 @@ class PayerInfo extends Equatable {
     required this.fullName,
     required this.phone,
     required this.paymentToken,
+    this.customerAddress = "Bamako",
   });
 
   String toJsonWaveSenegal() => json.encode({
@@ -39,11 +41,28 @@ class PayerInfo extends Equatable {
         "invoice_token": paymentToken
       });
 
+  String toJsonOrangeMoneyMali() => json.encode({
+        "orange_money_mali_customer_fullname": fullName,
+        "orange_money_mali_email": email,
+        "orange_money_mali_phone_number": phone,
+        "orange_money_mali_customer_address": customerAddress,
+        "payment_token": paymentToken
+      });
+
+  String toJsonMoovMoneyMali() => json.encode({
+        "moov_ml_customer_fullname": fullName,
+        "moov_ml_email": email,
+        "moov_ml_phone_number": phone,
+        "moov_ml_customer_address": customerAddress,
+        "payment_token": paymentToken
+      });
+
   @override
   List<Object?> get props => [
         email,
         fullName,
         phone,
         paymentToken,
+        customerAddress,
       ];
 }

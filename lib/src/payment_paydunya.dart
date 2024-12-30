@@ -47,6 +47,29 @@ class PaymentPaydunya {
     );
   }
 
+  // added method for Orange Money Mali && Moov Money Mali
+  Future<ResponseSoftPay> orangeMoneyMali({
+    required PayerInfo requestPayment,
+  }) async {
+    final uri = Uri.parse(SoftPayUrl.orangeMoneyMaliUrl);
+    return await _toggleRequest(
+      requestPayment: requestPayment,
+      uri: uri,
+      body: requestPayment.toJsonOrangeMoneyMali(),
+    );
+  }
+
+  Future<ResponseSoftPay> moovMoneyMali({
+    required PayerInfo requestPayment,
+  }) async {
+    final uri = Uri.parse(SoftPayUrl.moovMoneyMaliUrl);
+    return await _toggleRequest(
+      requestPayment: requestPayment,
+      uri: uri,
+      body: requestPayment.toJsonMoovMoneyMali(),
+    );
+  }
+
   Future<ResponseSoftPay> _toggleRequest({
     required PayerInfo requestPayment,
     required Uri uri,

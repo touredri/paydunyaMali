@@ -4,4 +4,6 @@ enum PaymentMethod {
   orangeMoneySenegal,
   waveSenegal,
   freeMoneySenegal,
+  orangeMoneyMali,
+  moovMoneyMali,
 }
